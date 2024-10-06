@@ -5,6 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance{
+    // FakeStoreAPI er domain name ata.. Future a Real domain name add korte hobe
     private const val BASE_URL ="https://fakestoreapi.com"
 
     fun getInstance(): Retrofit {

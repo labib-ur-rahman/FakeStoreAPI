@@ -18,6 +18,4 @@ object RetrofitInstance{
 
 
     // This is just a test in Design Branch
-
-    // New changes from Main branch
 }

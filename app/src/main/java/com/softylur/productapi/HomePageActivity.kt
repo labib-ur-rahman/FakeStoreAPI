@@ -152,7 +152,7 @@ class HomePageActivity : AppCompatActivity() {
                     val productList = response.body()
                     val adapter = ProductAdapter(productList!!)
                     binding.rvProduct.adapter = adapter
-                    adapter.setOnItemClickListener(object : ProductAdapter.onItemClickListener {
+                    adapter.setOnItemClickListener(object : ProductAdapter.OnItemClickListener {
                         override fun onItemClick(position: Int) {
 
                             val intent = Intent(this@HomePageActivity, ProductActivity::class.java)
@@ -201,7 +201,7 @@ class HomePageActivity : AppCompatActivity() {
                     val adapter = CategoryAdapter(categoryList)
                     binding.rvCategory.adapter = adapter
 
-                    adapter.setOnItemClickListener(object: CategoryAdapter.onItemClickListener{
+                    adapter.setOnItemClickListener(object: CategoryAdapter.OnItemClickListener{
                         override fun onItemClick(position: Int) {
 
                             when(position){

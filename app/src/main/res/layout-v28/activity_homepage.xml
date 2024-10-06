@@ -66,8 +66,7 @@
                 android:outlineSpotShadowColor="#000000"
                 app:layout_constraintBottom_toBottomOf="@+id/topHeaderImage"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/topHeaderImage"
-                tools:targetApi="p">
+                app:layout_constraintTop_toTopOf="@+id/topHeaderImage">
 
                 <ImageView
                     android:id="@+id/imageView"
@@ -177,8 +176,7 @@
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/ivProductImage"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:targetApi="p" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvCategory"
@@ -187,6 +185,7 @@
                         android:background="@drawable/bg_cat"
                         android:fontFamily="@font/baloo_da_2"
                         android:paddingStart="10dp"
+                        android:layout_marginStart="5dp"
                         android:paddingTop="1dp"
                         android:paddingEnd="10dp"
                         android:textColor="@color/black"
@@ -210,7 +209,7 @@
                         app:layout_constraintEnd_toEndOf="@+id/tvTitle"
                         app:layout_constraintStart_toStartOf="@+id/tvTitle"
                         app:layout_constraintTop_toBottomOf="@+id/tvCategory"
-                        tools:ignore="RtlHardcoded,RtlSymmetry" />
+                        tools:ignore="RtlSymmetry" />
 
                     <LinearLayout
                         android:id="@+id/linearLayout"
@@ -221,7 +220,7 @@
                         app:layout_constraintEnd_toEndOf="@+id/tvPrice"
                         app:layout_constraintStart_toStartOf="@+id/tvPrice"
                         app:layout_constraintTop_toBottomOf="@+id/tvPrice"
-                        tools:ignore="RtlSymmetry,UseCompoundDrawables">
+                        tools:ignore="RtlSymmetry">
 
                         <ImageView
                             android:layout_width="16dp"
@@ -330,8 +329,7 @@
                         android:textAlignment="center"
                         android:textColor="#3C424A"
                         android:textSize="15sp"
-                        android:textStyle="bold"
-                        tools:targetApi="p" />
+                        android:textStyle="bold" />
 
                 </androidx.cardview.widget.CardView>
 

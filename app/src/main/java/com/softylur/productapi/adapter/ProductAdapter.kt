@@ -10,35 +10,29 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.softylur.productapi.R
 import com.softylur.productapi.model.ProductModel
-import kotlinx.coroutines.withContext
 import java.text.DecimalFormat
 
-class ProductAdapter(var productList: List<ProductModel>) : RecyclerView.Adapter<ProductAdapter.myViewHolder>() {
+class ProductAdapter(private var productList: List<ProductModel>) : RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
 
-    private lateinit var mListener: onItemClickListener
+    private lateinit var mListener: OnItemClickListener
 
-    interface onItemClickListener{
+    interface OnItemClickListener{
         fun onItemClick(position: Int)
     }
 
-    fun setOnItemClickListener(listener: onItemClickListener){
+    fun setOnItemClickListener(listener: OnItemClickListener){
         mListener = listener
     }
 
 
-    class myViewHolder(itemView: View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
-        var ivProductImage: ImageView
-        var tvTitle: TextView
-        var tvRating: TextView
-        var tvCount: TextView
-        var tvPrice: TextView
+    class MyViewHolder(itemView: View, listener: OnItemClickListener) : RecyclerView.ViewHolder(itemView) {
+        var ivProductImage: ImageView = itemView.findViewById(R.id.ivProductImage)
+        var tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
+        var tvRating: TextView = itemView.findViewById(R.id.tvRating)
+        var tvCount: TextView = itemView.findViewById(R.id.tvCount)
+        var tvPrice: TextView = itemView.findViewById(R.id.tvPrice)
 
         init {
-            ivProductImage = itemView.findViewById(R.id.ivProductImage)
-            tvTitle = itemView.findViewById(R.id.tvTitle)
-            tvRating = itemView.findViewById(R.id.tvRating)
-            tvCount = itemView.findViewById(R.id.tvCount)
-            tvPrice = itemView.findViewById(R.id.tvPrice)
 
             itemView.setOnClickListener {
                 listener.onItemClick(adapterPosition)
@@ -46,9 +40,9 @@ class ProductAdapter(var productList: List<ProductModel>) : RecyclerView.Adapter
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_product, parent, false)
-        return myViewHolder(view, mListener)
+        return MyViewHolder(view, mListener)
     }
 
     override fun getItemCount(): Int {
@@ -56,7 +50,7 @@ class ProductAdapter(var productList: List<ProductModel>) : RecyclerView.Adapter
     }
 
     @SuppressLint("SetTextI18n")
-    override fun onBindViewHolder(holder: myViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val product = productList[position]
         product.getTitle().also { holder.tvTitle.text = it }
 

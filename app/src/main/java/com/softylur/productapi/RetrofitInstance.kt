@@ -4,9 +4,9 @@ import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object RetrofitInstance{
+object RetrofitInstance {
     // FakeStoreAPI er domain name ata.. Future a Real domain name add korte hobe
-    private const val BASE_URL ="https://fakestoreapi.com"
+    private const val BASE_URL = "https://fakestoreapi.com"
 
     // Retrofit instance create kora
     fun getInstance(): Retrofit {
@@ -15,13 +15,4 @@ object RetrofitInstance{
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
             .build()
     }
-
-
-    // This is just a test in Design Branch
-
-
-
-
-    // V2 from Main Branch
-    //V2 from Design Branch
 }
